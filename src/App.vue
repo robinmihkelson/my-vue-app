@@ -6,7 +6,7 @@ const products = ref([])
 
 const fetchAllProducts = async () => {
   const response = await axios.get('https://fakestoreapi.com/products')
-  return response.data
+  products.value = response.data
 }
 
 onMounted(async () => await fetchAllProducts())
